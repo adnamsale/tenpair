@@ -1,0 +1,17 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'com.dixonnet.tenpair.Main'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile group: 'net.sf.jopt-simple', name: 'jopt-simple', version: '4.9-beta-1'
+}
+
+run {
+    args null == System.getProperty("exec.args") ? "" : System.getProperty("exec.args").split()
+}
